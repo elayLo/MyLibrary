@@ -13,7 +13,7 @@ const LibraryContext = React.createContext({
             author: 'Joan Roaling'
         }
     ],
-    addBook: ({id, name, author}) => {},
+    addBook: ({name, author}) => {},
     deleteBook: (bookId) => {},
 })
 

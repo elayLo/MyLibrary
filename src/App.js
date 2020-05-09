@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import LibraryContext from './context/LibraryContext';
 import BooksList from './components/BooksList';
 import AddBook from './components/AddBook';
+import './main.sass'
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [books, setBooks] = useState(
@@ -11,8 +13,10 @@ function App() {
       return localData ? JSON.parse(localData) : []
     }
   ) 
-  const addBook = (book) => {
-    setBooks(old => [...old, book])
+  const addBook = ({name, author}) => {
+    const id = uuidv4(); 
+    const book = {id, name, author}
+    setBooks(old => [book, ...old])
   }
   const deleteBook = (bookId) => {
     setBooks(books.filter(book => book.id !== bookId))

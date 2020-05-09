@@ -1,0 +1,96 @@
+$main: #6C63FF
+    
+* 
+    padding: 0
+    margin: 0
+
+@mixin horizontal-center
+    display: flex 
+    justify-content: center
+
+@mixin vertical-center
+    display: flex 
+    align-items: center
+
+@mixin center
+    display: flex 
+    justify-content: center
+    align-items: center
+
+.add-book 
+    @include vertical-center
+    flex-direction: column
+    width: calc(80% - 40px)
+    margin-left: auto
+    margin-right: auto
+    form 
+        @include vertical-center
+        flex-direction: column
+    button 
+        background: $main
+        outline: 0 
+        border: 0
+        padding: 10px 40px
+        margin-left: auto
+        margin-right: auto
+        color: white
+        margin-top: 20px
+        border-radius: 5px
+    div 
+        display: flex
+        flex-direction: column
+        width: 100%
+        div 
+            margin: 5px 10px
+            flex-direction: column
+            width: calc(100% - 24px)
+            label 
+                font-size: 16px
+                font-weight: 600
+                margin-bottom: 3px
+            input 
+                outline: none 
+                width: calc(100% - 24px)
+                margin-left: auto
+                margin-right: auto
+                color: #5b5b5b
+                font-size: 16px
+                border-radius: 5px
+                background: #f3f3f3
+                border: none
+                padding: 12px
+
+.books 
+    width: 80%
+    margin-top: 30px
+    margin-left: auto
+    margin-right: auto
+    .books__title 
+        @include horizontal-center
+        p 
+            font-weight: bold
+            font-size: 20px
+            color: $main
+
+    .books__child
+        display: flex 
+        flex-direction: column
+        margin-top: 5px 
+        margin-bottom: 30px
+        button  
+            background: $main
+            outline: 0 
+            border: 0
+            padding: 10px 40px
+            color: white
+            margin-top: 5px
+            border-radius: 5px
+            width: 120px
+            text-align: center
+        div 
+            margin: 5px 0
+            p:first-child 
+                font-weight: 500
+                color: #828282
+                margin-bottom: 2px
+    
